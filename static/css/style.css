@@ -69,7 +69,7 @@ img {
 .title {
     display: block;
     align-self: center;
-    text-align: right;
+    text-align: center;
 }
 
 #nav-toggle:checked ~ .menu {
