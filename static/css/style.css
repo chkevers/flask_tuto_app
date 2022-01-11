@@ -73,21 +73,25 @@ img {
 }
 
 #nav-toggle:checked ~ .menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     line-height: 2rem;
-    background: rgba(0, 0, 0, 0.4);
-    width: 50vw;
-    /* flex-direction: column; */
-    /* position: absolute;
-    background: wheat;
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
     top:0;
-    right: 10vw;
-    z-index:1; */
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index:1;
+    margin: 0;
+    padding: 0;
 }
 
-#nav-toggle:checked ~.title{
+/* #nav-toggle:checked ~.title{
     display:none;
-}
+} */
 
 .menu a {
     box-sizing: border-box;
