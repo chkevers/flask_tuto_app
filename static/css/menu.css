@@ -1,11 +1,80 @@
-#menu__toggle {
-    opacity: 0;
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
 }
+
+.top-navbar {
+    border: pink solid 2px;;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: steelblue;
+    /* border-bottom-left-radius: 10vw;
+    border-bottom-right-radius: 10vw; */
+    /* height: 10vh; */
+}
+
+.hamburger-menu {
+    display: flex;
+    border: solid 2px green;
+    height: 100%;
+    flex-grow: 2;
+    justify-content: space-around;
+}
+
+.menu__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    flex-basis: auto;
+    width: 100%;
+    border: solid 2px red;
+}
+
+a {
+    text-decoration: none;
+    font-size: 26px;
+    color: white;
+} 
+
+.logo {
+    border: blue solid 2px;
+    /* display: block; */
+    height: 100%;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    border: solid yellow 2px;
+    color: white;
+}
+
+#menu__toggle {
+    /* opacity: 0; */
+    display: none;
+}
+
+
+
+
+
+/* Small screens */
+@media screen and (max-width:768px) {
+
+/* .hamburger-menu {
+    display: none;
+} */
 
 .menu__btn {
     position: fixed;
     top: 20px;
-    left: 20px;
+    left: 10px;
     width: 26px;
     height: 26px;
     cursor: pointer;
@@ -32,11 +101,15 @@
     top: 8px;
 }
 
+.hamburger-menu {
+    position: -200%;
+}
+
 .menu__box {
     display: block;
     position: fixed;
     top: 0;
-    /* left: -100%; */
+    left: -200%;
     width: 300px;
     height: 100%;
     list-style: none;
@@ -44,10 +117,44 @@
     padding: 80px 0;
     background: skyblue;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
-    transition-duration: 0.25s;
+    transition-duration: 0.5s;
 }
 
 .menu__item {
     display: block;
-    
+    padding: 12px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.menu__item:hover {
+    background: tomato;
+}
+
+#menu__toggle:checked ~ .menu__box {
+    /* transform: translateX(150%) */
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked + .menu__btn > span:before {
+    top: 0;
+}
+
+#menu__toggle:checked + .menu__btn > span:after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+h1 {
+    word-spacing: 5rem;
+    text-align: center;
+    line-height: 2.5rem;
+}
 }
