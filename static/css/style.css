@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root-nav {
+    background: steelblue;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+#root-nav > ul {
+    list-style: none;
+}
+
+.logo {
+    border: solid 2px red;
+}
+
+img {
+
+    box-sizing: border-box;
+    border: solid 2px yellow;
+    margin: 0;
+    max-height: 50%;
+    max-width: 50%;;
+}
+
