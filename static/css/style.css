@@ -1,6 +1,6 @@
 
 .nav-container {
-    border: solid 2px yellow;
+    /* border: solid 2px yellow; */
     background: steelblue;
     display: flex;
     flex-direction: row;
@@ -13,14 +13,22 @@
 
 .logo {
     justify-self: flex-start;
-    background:red;
+    /* background:red; */
+    padding: 0;
+}
+
+img {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: tomato solid 2px;
+    /* border: tomato solid 2px; */
     flex:auto;
     color: white;
 }
@@ -58,11 +66,33 @@
     padding: 0.5rem;
 }
 
-#nav-toggle:checked ~ .menu {
+.title {
     display: block;
-    height: 100%;
+    align-self: center;
+    text-align: right;
 }
 
+#nav-toggle:checked ~ .menu {
+    display: block;
+    line-height: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    width: 50vw;
+    /* flex-direction: column; */
+    /* position: absolute;
+    background: wheat;
+    top:0;
+    right: 10vw;
+    z-index:1; */
+}
 
+#nav-toggle:checked ~.title{
+    display:none;
+}
+
+.menu a {
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+}
 
 }
