@@ -8,6 +8,11 @@
 </head>
 <body>
     <h1>Welcome to Geo Map</h1>
-    <p>{{ item }}</p>
+    {% for i in items %}
+    <p>Author is {{ i.author }}</p>
+    <p>Book is {{ i.title }}</p>
+    <p>Personal note is {{ i.note }}</p>
+    <br>
+    {%endfor%}
 </body>
 </html>

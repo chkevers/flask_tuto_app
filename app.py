@@ -11,8 +11,14 @@ def hello():
 
 @app.route('/geomap')
 def geomap():
-    # item = 'Test for jinja'
-    return render_template('geomap.html', item='Test')
+    items = [
+        {"title": "Treasure Island", "author": "R.L Stevenson", "note": 2.5},
+        {"title": "The Alchemist", "author": "Paulo Coelho", "note": 4.1},
+        {"title": "To Kill a Mockingbird", "author": "Harper Lee", "note": 3.5},
+        {"title": "The Da Vinci Code", "author": "Dan Brown", "note": 3.7},
+        {"title": "The Book Thief", "author": "Markus Zusak", "note": 4.2},
+    ]
+    return render_template('geomap.html', items=items)
 
 
 
