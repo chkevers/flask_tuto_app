@@ -4,13 +4,13 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello():
+def home_page():
     welcome = 'Welcome to this flask app'
     return render_template('index.html', welcome=welcome)
 
 
 @app.route('/geomap')
-def geomap():
+def geomap_page():
     items = [
         {"title": "Treasure Island", "author": "R.L Stevenson", "note": 2.5},
         {"title": "The Alchemist", "author": "Paulo Coelho", "note": 4.1},

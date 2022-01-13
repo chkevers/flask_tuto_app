@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geo Map</title>
-</head>
-<body>
-    <h1>Welcome to Geo Map</h1>
+{% extends 'base.html' %}
+
+{% block title %}
+    Geomap
+{% endblock %}
+
+{% block content %}
     {% for i in items %}
-    <p>Author is {{ i.author }}</p>
-    <p>Book is {{ i.title }}</p>
-    <p>Personal note is {{ i.note }}</p>
     <br>
-    {%endfor%}
-</body>
-</html>
+    <p>Author is {{ i.author }}</p>
+    <p>Title is "{{ i.title }}"</p>
+    <p>Note is {{ i.note }}</p>
+    <br>
+    <hr>
+    {% endfor %}
+{% endblock %}
