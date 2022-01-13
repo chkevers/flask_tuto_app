@@ -1,0 +1,42 @@
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: solid red 2px;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    background-color: rgba(47, 58, 143, 0.7);
+    padding: 2rem;
+    width: 33%;
+    margin:3vh auto;
+    gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 6px purple;
+}
+
+.form-label {
+    border: violet solid 2px;
+}
+
+.form-btn {
+    padding:0.5rem;
+    background: purple;
+    border-radius: 5px;
+    color: white;
+    border: solid 2px white;
+}
+
+#map {
+    height: 400px;
+    width: 80%;
+    margin: 0 auto;
+    border: solid red 2px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:568px) {
+    .form-wrapper {
+        width: 60%;
+    }
+}

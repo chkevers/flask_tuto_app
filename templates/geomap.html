@@ -1,16 +1,61 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/geomap.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+{% endblock %}
+
 {% block title %}
-    Geomap
+    Home
 {% endblock %}
 
 {% block content %}
-    {% for i in items %}
-    <br>
-    <p>Author is {{ i.author }}</p>
-    <p>Title is "{{ i.title }}"</p>
-    <p>Note is {{ i.note }}</p>
-    <br>
-    <hr>
-    {% endfor %}
+
+    <form action="">
+        <div class="form-wrapper">
+
+            <div class="form-label">
+                <label for="country">Choose country</label>
+            </div>
+            <div>
+                <select name="country" id="country">
+                    <option value="belgium">Belgium</option>
+                    <option value="spain">Spain</option>
+                    <option value="germany">Germany</option>
+                    <option value="morocco">Morocco</option>
+                </select>
+            </div>
+
+            <div class="form-label">
+                <label for="topic">Choose the topic</label>
+            </div>
+            <div>
+                <select name="topic" id="country">
+                    <option value="site">Site</option>
+                    <option value="eat">Eat</option>
+                    <option value="accomodation">Accomodation</option>
+                    <option value="shop">Shop</option>
+                </select>
+            </div>
+
+            <div class="form-label">
+                <label for="gname">Global name</label>
+            </div>
+            <div class="form-input">
+                <input type="text" name="global_name" id="gname">
+            </div>
+            
+            <button type="submit" class="form-btn">
+                Press me !
+            </button>
+        </div>
+    </form>
+    <div id="map"></div>
+    <script src="{{ url_for('static', filename='js/geomap.js') }}"></script>
+
 {% endblock %}
