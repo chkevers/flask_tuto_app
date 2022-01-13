@@ -10,26 +10,26 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 # For Testing purpose --> creating new table
-class Cars(db.Model):
-    __table__name = 'cars'
-    __table_args__ = {"schema": "webapp_dev"}
+# class Cars(db.Model):
+#     __table__name = 'cars'
+#     __table_args__ = {"schema": "webapp_dev"}
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String())
-    model = db.Column(db.String())
-    doors = db.Column(db.Integer())
+#     id = db.Column(db.Integer, primary_key=True)
+#     name = db.Column(db.String())
+#     model = db.Column(db.String())
+#     doors = db.Column(db.Integer())
 
-    def __init__(self, name, model, doors) -> None:
+#     def __init__(self, name, model, doors) -> None:
         
-        self.name = name
-        self.model = model
-        self.doors = doors
+#         self.name = name
+#         self.model = model
+#         self.doors = doors
 
-    def __repr__(self) -> str:
-        return f"<Car {self.name}>"
+#     def __repr__(self) -> str:
+#         return f"<Car {self.name}>"
 
-row = Cars.query.all()
-print(row)
+# row = Cars.query.all()
+# print(row)
 
 @app.route('/')
 def home_page():
