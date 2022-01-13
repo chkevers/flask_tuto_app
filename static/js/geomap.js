@@ -1,8 +1,8 @@
-const linkTest = document.querySelector('#map')
-linkTest.addEventListener('click', function(e) {
-    e.preventDefault;
-    alert('Here we go')
-});
+// const linkTest = document.querySelector('#map')
+// linkTest.addEventListener('click', function(e) {
+//     e.preventDefault;
+//     alert('Here we go')
+// });
 
 
 // Geomapping
