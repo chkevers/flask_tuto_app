@@ -4,6 +4,8 @@
 #
 #    pip-compile requirements.in
 #
+alembic==1.7.5
+    # via flask-migrate
 boto3==1.20.32
     # via -r requirements.in
 botocore==1.23.32
@@ -16,10 +18,22 @@ flask==2.0.2
     # via
     #   -r requirements.in
     #   flask-login
+    #   flask-migrate
+    #   flask-sqlalchemy
 flask-login==0.5.0
     # via -r requirements.in
+flask-migrate==3.1.0
+    # via -r requirements.in
+flask-sqlalchemy==2.5.1
+    # via flask-migrate
+greenlet==1.1.2
+    # via sqlalchemy
 gunicorn==20.1.0
     # via -r requirements.in
+importlib-metadata==4.10.0
+    # via alembic
+importlib-resources==5.4.0
+    # via alembic
 itsdangerous==2.0.1
     # via flask
 jinja2==3.0.3
@@ -28,18 +42,30 @@ jmespath==0.10.0
     # via
     #   boto3
     #   botocore
+mako==1.1.6
+    # via alembic
 markupsafe==2.0.1
-    # via jinja2
+    # via
+    #   jinja2
+    #   mako
 python-dateutil==2.8.2
     # via botocore
 s3transfer==0.5.0
     # via boto3
 six==1.16.0
     # via python-dateutil
+sqlalchemy==1.4.29
+    # via
+    #   alembic
+    #   flask-sqlalchemy
 urllib3==1.26.8
     # via botocore
 werkzeug==2.0.2
     # via flask
+zipp==3.7.0
+    # via
+    #   importlib-metadata
+    #   importlib-resources
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
