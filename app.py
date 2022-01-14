@@ -1,8 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import folium 
-from folium import plugins
 import googlemaps
 import requests
 from pprint import pprint
