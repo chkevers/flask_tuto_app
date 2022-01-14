@@ -12,8 +12,16 @@ botocore==1.23.32
     # via
     #   boto3
     #   s3transfer
+certifi==2021.10.8
+    # via requests
+charset-normalizer==2.0.10
+    # via requests
 click==8.0.3
-    # via flask
+    # via
+    #   flask
+    #   geocoder
+decorator==5.1.1
+    # via ratelim
 flask==2.0.2
     # via
     #   -r requirements.in
@@ -28,10 +36,18 @@ flask-sqlalchemy==2.5.1
     # via
     #   -r requirements.in
     #   flask-migrate
+future==0.18.2
+    # via geocoder
+geocoder==1.38.1
+    # via -r requirements.in
+googlemaps==4.5.3
+    # via -r requirements.in
 greenlet==1.1.2
     # via sqlalchemy
 gunicorn==20.1.0
     # via -r requirements.in
+idna==3.3
+    # via requests
 importlib-metadata==4.10.0
     # via alembic
 importlib-resources==5.4.0
@@ -54,16 +70,27 @@ psycopg2-binary==2.9.3
     # via -r requirements.in
 python-dateutil==2.8.2
     # via botocore
+ratelim==0.1.6
+    # via geocoder
+requests==2.27.1
+    # via
+    #   -r requirements.in
+    #   geocoder
+    #   googlemaps
 s3transfer==0.5.0
     # via boto3
 six==1.16.0
-    # via python-dateutil
+    # via
+    #   geocoder
+    #   python-dateutil
 sqlalchemy==1.4.29
     # via
     #   alembic
     #   flask-sqlalchemy
 urllib3==1.26.8
-    # via botocore
+    # via
+    #   botocore
+    #   requests
 werkzeug==2.0.2
     # via flask
 zipp==3.7.0

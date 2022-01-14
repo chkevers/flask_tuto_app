@@ -1,6 +1,25 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+import folium 
+from folium import plugins
+import googlemaps
+import requests
+from pprint import pprint
+
+# Geocoding with Google maps
+map_key = 'AIzaSyBbImVNHE4UckTVaxf1_oztbwX7l98o0Vw'
+header = {
+    'key': map_key,
+    'origin': 'Avenue Louise 247',
+    'destination': 'Avenue Henry Dunant 66 1140 Brussels',
+    'mode': 'driving'
+}
+
+base_url = 'https://maps.googleapis.com/maps/api/directions/json?'
+response = requests.get(base_url, params=header).json()
+pprint(response)
+pprint(response.keys())
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://chkevers:Kokomo007&@flask-db.cfc0xigg1q9j.eu-west-3.rds.amazonaws.com:5432/ebdb'
@@ -31,6 +50,10 @@ class Cars(db.Model):
 row = Cars.query.all()
 print(row)
 
+import geocoder
+lat, lng = geocoder.ip('me').latlng
+print(lat, lng)
+
 @app.route('/')
 def home_page():
     welcome = 'Welcome to this flask app'
@@ -46,6 +69,7 @@ def geomap_page():
         {"title": "The Da Vinci Code", "author": "Dan Brown", "note": 3.7},
         {"title": "The Book Thief", "author": "Markus Zusak", "note": 4.2},
     ]
+
     return render_template('geomap.html', items=items)
 
 
