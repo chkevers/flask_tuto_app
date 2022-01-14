@@ -30,8 +30,29 @@
 // Geomapping Google Maps
 
 function initMap() {
+
+    let valdor = {lat: 50.8369189, lng: 4.4250342};
     let map = new google.maps.Map(document.getElementById('map-google'), {
-        center: {lat: 50.85, lng: 4.34},
-        zoom: 15,
+        center: valdor,
+        zoom: 18,
+    });
+
+    let marker = new google.maps.Marker({
+        position: valdor,
+        map: map,
+        draggable: true,
+        title: "We are at Val d'Or house",
+    });
+
+    let info = new google.maps.InfoWindow({
+        content: "Bip Bip ?"
+    });
+
+    marker.addListener("click", () => {
+        info.open({
+            anchor: marker,
+            map: map,
+            shouldFocus: false,
+        });
     });
 }
