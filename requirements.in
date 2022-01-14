@@ -4,3 +4,4 @@ boto3
 flask-login
 flask-migrate
 Flask-SQLAlchemy
+psycopg2-binary
