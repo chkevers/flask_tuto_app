@@ -3,33 +3,33 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
 app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://chkevers:Kokomo007&@flask-db.cfc0xigg1q9j.eu-west-3.rds.amazonaws.com:5432/ebdb'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://chkevers:Kokomo007&@flask-db.cfc0xigg1q9j.eu-west-3.rds.amazonaws.com:5432/ebdb'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# db = SQLAlchemy(app)
-# migrate = Migrate(app, db)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
-# For Testing purpose --> creating new table
-# class Cars(db.Model):
-#     __table__name = 'cars'
-#     __table_args__ = {"schema": "webapp_dev"}
+For Testing purpose --> creating new table
+class Cars(db.Model):
+    __table__name = 'cars'
+    __table_args__ = {"schema": "webapp_dev"}
 
-#     id = db.Column(db.Integer, primary_key=True)
-#     name = db.Column(db.String())
-#     model = db.Column(db.String())
-#     doors = db.Column(db.Integer())
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String())
+    model = db.Column(db.String())
+    doors = db.Column(db.Integer())
 
-#     def __init__(self, name, model, doors) -> None:
+    def __init__(self, name, model, doors) -> None:
         
-#         self.name = name
-#         self.model = model
-#         self.doors = doors
+        self.name = name
+        self.model = model
+        self.doors = doors
 
-#     def __repr__(self) -> str:
-#         return f"<Car {self.name}>"
+    def __repr__(self) -> str:
+        return f"<Car {self.name}>"
 
-# row = Cars.query.all()
-# print(row)
+row = Cars.query.all()
+print(row)
 
 @app.route('/')
 def home_page():
