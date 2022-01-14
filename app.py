@@ -9,7 +9,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-For Testing purpose --> creating new table
+# For Testing purpose --> creating new table
 class Cars(db.Model):
     __table__name = 'cars'
     __table_args__ = {"schema": "webapp_dev"}
