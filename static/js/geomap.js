@@ -1,11 +1,11 @@
-const linkTest = document.querySelector('#map')
-linkTest.addEventListener('click', function(e) {
-    e.preventDefault;
-    alert('Here we go')
-});
+// const linkTest = document.querySelector('#map')
+// linkTest.addEventListener('click', function(e) {
+//     e.preventDefault;
+//     alert('Here we go')
+// });
 
 
-Geomapping
+// Geomapping
 
 navigator.geolocation.getCurrentPosition(function success(pos){
     console.log(pos);
@@ -20,9 +20,6 @@ navigator.geolocation.getCurrentPosition(function success(pos){
     L.marker([lat,lgt]).addTo(map)
     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
     .openPopup();
-
-
-
 },
 
 function error(err) {
